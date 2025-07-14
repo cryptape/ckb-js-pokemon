@@ -818,18 +818,8 @@ export function validateMintTransaction(): number {
 
 ## What We Built
 
-You now have a working token contract on CKB that demonstrates several unique characteristics of the platform. The contract creates CKB-backed tokens with exact capacity matching, making inflation impossible since every token is backed by the precise amount of CKB it represents. Unlike traditional smart contracts that require explicit function calls, this implementation uses automatic transaction type detection, figuring out whether you're minting, transferring, or burning tokens based purely on your transaction structure.
-
-One particularly elegant feature is token consumption during transfers. While most blockchains require separate burn transactions, our contract allows tokens to be consumed as part of any transfer, enabling seamless integration with other contracts in complex multi-step operations. Throughout the development process, you experienced the full TypeScript development workflow, bringing familiar tooling and type safety to blockchain development.
-
-The patterns you learned here form the foundation for building any CKB application. Cell manipulation, script validation, and transaction pattern recognition are core concepts that will serve you well whether you're building simple tokens or complex DeFi protocols.
+Our token contract implements CKB-backed tokens with exact capacity matching to prevent inflation attacks. Every token is backed by the precise CKB amount defined in the exchange rate. The contract uses automatic transaction detection instead of explicit function calls, recognizing mint, transfer, and burn operations based on Cell patterns. Token consumption during transfers enables seamless multi-contract interactions without requiring separate burn operations.
 
 ## Next Steps
 
-Now that you understand CKB smart contract development, your journey can take several exciting directions. For production token development, start by thoroughly evaluating xUDT against your specific requirements. Take time to study its extension mechanisms and understand how they might accommodate advanced token features you need. Reviewing existing token implementations on CKB mainnet will give you practical insights into how real projects structure their token contracts and handle complex use cases.
-
-For continued learning, consider building more complex multi-contract systems that showcase CKB's unique capabilities. Integration with the CCC SDK will connect your contracts to user-facing applications, bringing your blockchain logic to life through intuitive interfaces. As you grow more comfortable with the platform, explore CKB's distinctive features like state rent and native assets, which open up possibilities not available on other blockchains.
-
-The Cell model might feel different at first, but it offers incredible flexibility once you internalize its patterns. Combined with TypeScript and ckb-js-vm, you get the best of both worlds: familiar tools with blockchain superpowers. Whether you're building the next generation of DeFi protocols or experimenting with novel blockchain applications, you now have the foundation to turn your ideas into reality.
-
-Happy building!
+For production development, evaluate [xUDT](https://docs.nervos.org/docs/common-scripts/xudt) against your token requirements and review existing CKB mainnet implementations for proven patterns. Build multi-contract systems to explore CKB's unique capabilities and integrate with [CCC SDK](https://github.com/ckb-ecofund/ccc) for frontend applications. Explore CKB-specific features like state rent and native assets that differentiate the platform from other blockchains.
