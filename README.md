@@ -9,13 +9,68 @@ This project implements a Pokemon NFT collection platform where users can:
 - Build their Pokemon collection with varying rarities and prices
 - Manage their Pokemon collection through a modern React web interface
 
-## 🏗️ Project Components
+## What You'll Learn
+
+By working through this demo, you’ll see how to:
+
+- Deploy and interact with CKB smart contracts using JavaScript/TypeScript
+- Mint, transfer, and trade NFTs (Pokémon) using a fungible token as in-app token.
+- Connect a React frontend to blockchain logic through CCC wallet integration.
+- Reuse these patterns to build your own:
+    - NFT or collectible dApps
+    - Marketplaces with in-app tokens
+    - Tokenized reward/point systems
+    - …
+
+## 🏗️ Project Structure
+
+```
+ckb-js-pokemon/
+├── app/                     
+│   ├── app/                  # Next.js frontend for the Pokémon NFT dApp
+│   ├── public/               # Static assets (icons, images)
+│   └── package.json          # Configuration and dependencies
+├── contracts/                # Smart contracts for tokens and NFTs
+│   ├── poke-point/           # CKB cell model fungible token (“PokePoint”)
+│   │   ├── src/              # Token logic: mint, transfers and utils
+│   │   ├── tests/            # Test suite for PokePoint Contract
+│   │   └── migrations/
+│   ├── pokemon/              # NFT contract for Pokémon collectibles
+│   │   ├── src/              # NFT logic: issue, purchase, transfer, burn, utils
+│   │   ├── tests/            # Test suite for Pokemon Contract
+│   │   └── migrations/
+├── scripts/                  # Node scripts for deployment and token issuance
+│   ├── fetch-pokemon-data.js # Fetches Pokémon metadata from external API
+│   └── issue-pokemon.js      # Issues Pokémon NFTs via the deployed contracts
+├── DEPLOYMENT.md             # Deployment instructions for contracts & frontend
+├── TUTORIAL.md               # Written tutorial for minting, owning and trading Pokémon
+└── README.md                 # Project overview and getting-started guide
+```
 
 - **[Frontend App](app/README.md)**: Next.js application with React components and CKB wallet integration
 - **[PokePoint Contract](contracts/poke-point/README.md)**: Custom token contract for platform currency (10 CKB = 1 PokePoint)
 - **[Pokemon Contract](contracts/pokemon/README.md)**: NFT contract for Pokemon collectibles with integrated pricing
 
-## 🚀 Quick Start
+## Quick Start
+
+### Option 1: Try it online
+
+Visit the hosted demo: [ckb-js-pokemon-app.vercel.app](https://ckb-js-pokemon-app.vercel.app/)
+
+### Option 2: Run locally
+
+### Prerequisite
+
+- Node.js ≥ 18
+- pnpm
+
+1. Clone the github repo and navigate to the folder
+```bash
+git clone https://github.com/cryptape/ckb-js-pokemon.git
+cd ckb-js-pokemon
+```
+
+2. Start your local server and view on http://localhost:3000
 
 ```bash
 # Install dependencies
@@ -28,8 +83,6 @@ pnpm build:contracts
 pnpm dev
 ```
 
-**Requirements**: Node.js 18+, pnpm
-**Development Server**: `http://localhost:3000`
 
 ## 🔧 Development Commands
 
