@@ -12,7 +12,7 @@ export const ISSUER_CONFIG = {
 export const CKB_JS_VM_CONFIG = {
   CODE_HASH: '0x3e9b6bead927bef62fcb56f0c79f4fbd1b739f32dd222beac10d346f2918bed7',
   HASH_TYPE: 'type' as HashType,
-  TX_HASH: '0x9f6558e91efa7580bfe97830d11cd94ca5d614bbf4a10b36f3a5b9d092749353',
+  TX_HASH: '0x756fdaf0d1ba1d2e03dc13c71c967b24021bc054893a766ccee6879c468892d2',
 } as const;
 
 // PokePoint Contract Configuration
